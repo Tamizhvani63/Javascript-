@@ -252,14 +252,113 @@ for(initialize variable; condition; statement){
 
 //9.NESTED FOR LOOP
 
-let nums=[];
-for (let i=0;i<3;i++)//i=0 0<3 --->index valuse
+// let nums=[];
+// for (let i=0;i<3;i++)//i=0 0<3  1<3--->index valuse
+// {
+//     nums.push([]); //num[0] num[1]
+//     for(let j=0;j<3;j++)
+//     {
+//         nums[i].push(j);//num[0]={0,1,2}
+//     }
+// }
+// console.log(nums);
+// console.table(nums);
+
+//10.FOR OF LOOP STATEMENT
+ /* ITS USED FOR ARRAY */
+
+// let fnames = ["vani","tamil","saran","pugal","ram"];
+// for( let i=0;i<fnames.length;i++){
+//     console.log(fnames[i]);
+// }
+
+// console.log("For of loop:")
+// for(let fname of fnames){
+//     console.log(fname);
+// }
+
+//11.FOR IN LOOP STATEMENT
+/* ITS USED OBJECT AND KEY*/ 
+
+// let user ={
+//     fname:"tamilvani",
+//     age:12,
+//     city:"salem",
+//     contact:"1234567891"
+// }
+// for (let prop in user ){
+//     console.log(prop+ " : "+user[prop]);
+// }
+
+
+// //12.LOOPING OVER OBJECT BY CONVERTING TO AN ARRAY
+
+let user ={
+    fname:"tamilvani",
+    age:12,
+    city:"salem",
+    contact:"1234567891"
+}
+let arr_keys=Object.keys(user);
+console.log(arr_keys)
+console.table(arr_keys);
+
+let arr_values = Object.values(user);
+console.log(arr_values);
+console.table(arr_values);
+
+
+/* using for loop*/
+for(i=0;i<arr_keys.length;i++)
 {
-    nums.push([]); //num[0]
-    for(let j=0;j<3;j++)
-    {
-        nums[i].push(j);//num[0]={0,1,2}
+    console.log(arr_keys[i]+" : "+arr_values[i])
+    //console.log(user[arr_keys[i]]);
+}
+
+//13.BREAK IN JS
+
+for(i=1;i<=10;i++){
+    console.log(i);
+    if(i==4){
+        break;
     }
 }
-console.log(nums);
-console.table(nums);
+
+//14.CONTINUE IN JS
+console.log("continue in js")
+for (i = 1; i <= 10; i++) {
+
+  if (i == 4) {
+    continue;
+  }
+    console.log(i);
+}
+
+
+console.log("print odd numbers")
+for (i = 1; i <= 10; i++) {
+  if (i%2==0) {
+    continue;
+  }
+  console.log(i);
+}
+
+//15. LABLE BLOCK IN JS
+
+let groups = [
+  ["Ram", "Sam", "Ravi"],
+  ["Kumar", "Tara", "Sundar"],
+  ["Rajesh", "Sara", "Rahul"],
+];
+
+for (let group of groups)
+{    
+    inner:
+    for(let member of group)
+    {
+      if(member.startsWith('R')){
+        console.log("found one starting with R",member);
+        break inner;
+      }
+    }
+}
