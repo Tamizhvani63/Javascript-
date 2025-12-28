@@ -154,3 +154,148 @@ let last_name="vani";
 // console.log(String.fromCharCode(65,66,67.122,98));
 
 
+//1.FUNCTION WITH RETURN STATEMENT
+
+// function add(a,b){
+//     return a+b;
+// }
+// console.log(add(12,13));
+// console.log(add(30,40));
+
+// //Function with Arbitray arguments
+
+// //METHOD 1 Argument Object
+
+// function sum() {
+//   let total = 0;
+
+//   for (let i = 0; i < arguments.length; i++) {
+//     total += arguments[i];
+//   }
+
+//   console.log(total);
+// }
+
+// sum(5, 10);
+// sum(10, 20, 30);
+// sum(1, 2, 3, 4, 5);
+
+// //METHOD 2  Rest Parameter (...)
+
+// function sum(...numbers) {
+//   let total = 0;
+
+//   for (let num of numbers) {
+//     total += num;
+//   }
+
+//   return total;
+// }
+
+// console.log(sum(5, 5));
+// console.log(sum(10, 20, 30));
+// console.log(sum(1, 2, 3, 4));
+
+
+//2.FUNCTION AS EXPRESSION
+
+// const add=function(a,b){
+//     return a+b;
+
+// }
+// console.log(add);
+// console.log(add(30,50))
+
+//ARROW FUNCTION
+//const functioname = (parameter) => {function body};
+
+// const add=(a,b)=>{ return a+b;}; 
+// console.log(add)
+// console.log(add (25,30))
+
+//1.arrow function with map()
+
+// let numbers=[1,2,3,4,5];
+// console.log(numbers)
+// let doubleNumbers=numbers.map(number=>number*2)
+// console.log(doubleNumbers);
+
+//2.using arrow function with filter():
+
+// let words = ['apple','orange','banana','grapes']
+// let filteredWords=words.filter(word=>word.length>5)
+// console.log(filteredWords);
+
+//3.using arrow function with reduce();
+
+// console.log(numbers)
+// let total=numbers.reduce((sum,number)=>sum+number,0);
+// console.log(total);
+
+//4.using arrow function to create a closure:
+
+let createcounter =()=>{
+    let count=0;
+    return ()=>{
+        count++;
+        return count;
+    }
+};
+let counter=createcounter();
+console.log(counter);
+console.log(counter());
+console.log(counter());
+console.log(counter());
+console.log(counter());
+
+//CALLBACK FUNCTION IN JAVASCRIPT
+
+function mycallback(){
+    console.log("iam a callback function");
+}
+function test(fun){
+    fun()
+}
+test(mycallback);
+
+//setTimeout(function,1000);
+
+setTimeout(function(){
+    console.log("Hello World");
+},3000);
+
+//setInterval
+
+setInterval(function () {
+  console.log("Hello tamilvani");
+}, 3000);
+
+const numbers=[1,2,3];
+numbers.forEach(function(number){
+        console.log(number);
+})
+
+
+//SCOPE IN JAVASCRIPT
+//1.Block scope
+//2.Function scope
+
+ if (true) {
+    let blockscopevariable='iam a variable with blockscope';
+    console.log(blockscopevariable);
+  }
+   console.log(blockscopevariable);
+   
+ 
+ function myfunction(){
+     functionscopevariable='haii this is variable with function scope';
+   
+    console.log(functionscopevariable);
+
+    function add()
+    {
+        console.log(functionscopevariable);
+    }
+    add();
+ }
+ myfunction();
