@@ -24,27 +24,32 @@
 
 //String function in javascript
 
-let first_name="tamil";
-let last_name="vani";
+// let first_name="tamil";
+// let last_name="vani";
 
 // //concatenation
+
 // let m=first_name+" "+last_name;
 // console.log( "concatenation : "+m);
 
 // //concat
+
 // s = first_name.concat('',last_name);
 // console.log("concatenation : " + s);
 
 // //append
+
 // b="Thiru"
 // b+="pugal"
 // console.log("append : "+b)
 
 // //Escaping
+
 // d='she can\'t run';
 // console.log(d);
 
 // //Length
+   
 // c=first_name.length;
 // console.log("length : " +c)
 
@@ -162,9 +167,9 @@ let last_name="vani";
 // console.log(add(12,13));
 // console.log(add(30,40));
 
-// //Function with Arbitray arguments
+//Function with Arbitray arguments
 
-// //METHOD 1 Argument Object
+//METHOD 1 Argument Object
 
 // function sum() {
 //   let total = 0;
@@ -180,7 +185,7 @@ let last_name="vani";
 // sum(10, 20, 30);
 // sum(1, 2, 3, 4, 5);
 
-// //METHOD 2  Rest Parameter (...)
+//METHOD 2  Rest Parameter (...)
 
 // function sum(...numbers) {
 //   let total = 0;
@@ -197,7 +202,7 @@ let last_name="vani";
 // console.log(sum(1, 2, 3, 4));
 
 
-//2.FUNCTION AS EXPRESSION
+// 2.FUNCTION AS EXPRESSION
 
 // const add=function(a,b){
 //     return a+b;
@@ -206,8 +211,8 @@ let last_name="vani";
 // console.log(add);
 // console.log(add(30,50))
 
-//ARROW FUNCTION
-//const functioname = (parameter) => {function body};
+// ARROW FUNCTION
+// const functioname = (parameter) => {function body};
 
 // const add=(a,b)=>{ return a+b;}; 
 // console.log(add)
@@ -215,10 +220,10 @@ let last_name="vani";
 
 //1.arrow function with map()
 
-// let numbers=[1,2,3,4,5];
-// console.log(numbers)
-// let doubleNumbers=numbers.map(number=>number*2)
-// console.log(doubleNumbers);
+let numbers=[1,2,3,4,5];
+console.log(numbers)
+let doubleNumbers=numbers.map(number=>number*2)
+console.log(doubleNumbers);
 
 //2.using arrow function with filter():
 
@@ -228,9 +233,9 @@ let last_name="vani";
 
 //3.using arrow function with reduce();
 
-// console.log(numbers)
-// let total=numbers.reduce((sum,number)=>sum+number,0);
-// console.log(total);
+console.log(numbers)
+let total=numbers.reduce((sum,number)=>sum+number,0);
+console.log(total);
 
 //4.using arrow function to create a closure:
 
@@ -266,36 +271,36 @@ setTimeout(function(){
 
 //setInterval
 
-setInterval(function () {
-  console.log("Hello tamilvani");
-}, 3000);
+// setInterval(function () {
+//   console.log("Hello tamilvani");
+// }, 3000);
 
-const numbers=[1,2,3];
-numbers.forEach(function(number){
-        console.log(number);
-})
+// const numbers=[1,2,3];
+// numbers.forEach(function(number){
+//         console.log(number);
+// })
 
 
 //SCOPE IN JAVASCRIPT
 //1.Block scope
 //2.Function scope
 
- if (true) {
-    let blockscopevariable='iam a variable with blockscope';
-    console.log(blockscopevariable);
-  }
-   console.log(blockscopevariable);
+//  if (true) {
+//     let blockscopevariable='iam a variable with blockscope';
+//     console.log(blockscopevariable);
+//   }
+//    console.log(blockscopevariable);
    
  
- function myfunction(){
-     functionscopevariable='haii this is variable with function scope';
+//  function myfunction(){
+//      functionscopevariable='haii this is variable with function scope';
    
-    console.log(functionscopevariable);
+//     console.log(functionscopevariable);
 
-    function add()
-    {
-        console.log(functionscopevariable);
-    }
-    add();
- }
- myfunction();
+//     function add()
+//     {
+//         console.log(functionscopevariable);
+//     }
+//     add();
+//  }
+//  myfunction();
