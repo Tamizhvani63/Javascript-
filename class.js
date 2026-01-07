@@ -295,7 +295,7 @@ console.log(MyClass.myStaticProperty);
 
 /*
 class DataBase {
-    static instance = "vani";
+    static instance = "null";
     static getInstance() {
         if (!DataBase.instance){
             DataBase.instance = new DataBase();
