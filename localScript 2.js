@@ -66,15 +66,10 @@ function addToLocalStorage (data){
 }
 
 
-
-
-
-
-
 // Load All data Form LoacalStorage
     function loadStoredData(){
         const storedData=JSON.parse(localStorage.getItem("myData")) || [];
-        dataList.innerHTMl ="";
+        dataList.innerHTML ="";
         storedData.forEach((data,index)=>{
         /*
             const li=document.createElement("li");
@@ -88,7 +83,7 @@ function addToLocalStorage (data){
        </div>
        <li>`;
          
-       dataList.innerHTML +=output;
+       dataList.innerHTML += output;
 
         });
 
