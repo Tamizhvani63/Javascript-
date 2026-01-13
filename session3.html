@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review</title>
+    <style>
+           *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body{
+            background-color: #f2f2f2;
+            width: 100vw;
+            height: 100vh;
+            display: grid;
+            place-items: center;
+        }
+
+        .container{
+            width: 600px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 5px;
+        }
+
+        h1{
+            font-size: 20px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            text-align: center;
+            text-transform: uppercase;
+        }
+
+        h2{
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 15px;
+            color: chocolate;
+            text-transform: uppercase;
+        }
+
+        label{
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        input[type="text"],
+          input[type="email"]{
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 20px;
+          }
+
+          button{
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #4caf50;
+          }
+
+          button:hover{
+            background-color: #45a049;
+          }
+
+          table{
+            width: 100%;
+            border: 1px solid #ccc;
+            margin-bottom: 15px;
+            border-collapse: collapse;
+          }
+
+          table th,table td{
+            border-bottom: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+            cursor: pointer;
+          }
+
+          table td {
+            border-left: 1px solid #ccc;
+          }
+
+          tr:hover {
+            background-color: #f1f1f1;
+          }
+
+          .finish{
+            background-color: #fa5828;
+          }
+
+          .finish:hover{
+            background: #bd3309;
+          }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Multi-Step Form Session Storage</h1>
+        <h2>Review Details</h2>
+        <table id="dataTable">
+           
+        </table>
+        <button type="button" id="btnStep2Back">Back Step</button>
+        <button type="button" class="finish">Confirm Submission</button>
+    </div>
+    <script>
+           const dataTable = document.getElementById("dataTable");
+           const btnStep2Back = document.getElementById("btnStep2Back");
+         btnStep2Back.addEventListener("click", function () {
+            window.location.href = "http://127.0.0.1:5500/session2.html"
+        });
+
+        
+        function loadSession() {
+            let data = sessionStorage.getItem("formData") || {};
+            data = JSON.parse(data);
+            let output = "";
+             output = ` <tr>
+                <th>Name</th>
+                <td>${data.name}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>${data.email}</td>
+            </tr>
+            <tr>
+                <th>Address</th>
+                <td>${data.address}</td>
+            </tr>
+            <tr>
+                <th>Contact No</th>
+                <td>${data.phone}</td>
+            </tr>
+               `
+            
+            dataTable.innerHTML = output;
+        }
+        loadSession();
+    </script>
+</body>
+</html>
