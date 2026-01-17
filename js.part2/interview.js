@@ -403,10 +403,35 @@ child.addEventListener(
 
 
 
-const frm=document.getElementById("frm");
+// const frm=document.getElementById("frm");
 
-frm.addEventListener("keyup",(e)=>{
-    if(e.target.dataset.uppercase!=undefined){
-       e.target.value=e.target.value.toUpperCase();
-    }
+// frm.addEventListener("keyup",(e)=>{
+//     if(e.target.dataset.uppercase!=undefined){
+//        e.target.value=e.target.value.toUpperCase();
+//     }
+// })
+
+
+//---------------------------------------------------------------------------------
+
+const txtInput =document.getElementById("txtInput");
+txtInput.addEventListener("keyup",function(){
+       optimizeFunction();
 })
+let counter =0;
+const getDataFromApi=()=>{
+  console.log("getting Data.....",counter++);
+
+};
+
+const debounceMethod=function(fn,delay){
+  let timer;
+  return function(){
+    clearTimeout(timer);
+    timer = setTimeout(()=>{
+    fn.apply(this,arguments)
+    },delay);
+  };
+};
+
+const optimizeFunction = debounceMethod(getDataFromApi, 300);
